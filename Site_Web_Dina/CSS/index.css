@@ -1,34 +1,73 @@
-/* index.css */
-
-/* Import d'une police un peu rétro/pixelisée */
+/* Import d'une police rétro/pixelisée */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
     margin: 0;
-    height: 100vh; /* prend toute la hauteur de la fenêtre */
+    height: 100vh;
     display: flex;
-    justify-content: center; /* centre horizontalement */
-    align-items: center;     /* centre verticalement */
-    flex-direction: column;  /* pour que h1 et i soient en colonne */
-    background-color: #1dfffb; /* juste pour le style */
-    font-family: 'Press Start 2P', cursive; /* police spéciale 2010-like */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1dfffb;
+    font-family: 'Press Start 2P', cursive;
 }
 
 h1 {
     font-size: 3em;
     color: #ff0080;
-    text-shadow: 2px 2px 0 #000; /* effet un peu « montage mal fait » */
+    text-shadow: 2px 2px 0 #000;
     cursor: pointer;
+    transition: transform 0.2s;
 }
 
 h1#dina:hover {
     transform: scale(1.1);
 }
 
+/* Dina pop qui tourne dynamiquement */
 .pop-dina {
     position: absolute;
     font-weight: bold;
     user-select: none;
+    pointer-events: none;
+    /* animation définie dynamiquement en JS */
+}
+
+/* Animation spin */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Paillettes */
+.paillette {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: gold;
+    pointer-events: none;
+    animation: pailletteAnim 1s forwards;
+}
+
+@keyframes pailletteAnim {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) scale(0); opacity: 0; }
+}
+
+/* Mini explosion colorée */
+.explosion {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: explodeAnim 0.6s forwards;
+}
+
+@keyframes explodeAnim {
+    0% { transform: translate(0,0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--ex-x), var(--ex-y)) scale(0); opacity: 0; }
 }
 
 i {

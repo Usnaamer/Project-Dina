@@ -1,0 +1,28 @@
+/* index.css */
+
+/* Import d'une police un peu rétro/pixelisée */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh; /* prend toute la hauteur de la fenêtre */
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;     /* centre verticalement */
+    flex-direction: column;  /* pour que h1 et i soient en colonne */
+    background-color: #f0f0f0; /* juste pour le style */
+    font-family: 'Press Start 2P', cursive; /* police spéciale 2010-like */
+}
+
+h1 {
+    font-size: 3em;
+    color: #ff0080;
+    text-shadow: 2px 2px 0 #000; /* effet un peu « montage mal fait » */
+    cursor: pointer;
+}
+
+i {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #333;
+}

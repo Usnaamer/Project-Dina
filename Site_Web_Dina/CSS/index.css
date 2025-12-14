@@ -10,7 +10,7 @@ body {
     justify-content: center; /* centre horizontalement */
     align-items: center;     /* centre verticalement */
     flex-direction: column;  /* pour que h1 et i soient en colonne */
-    background-color: #f0f0f0; /* juste pour le style */
+    background-color: #1dfffb; /* juste pour le style */
     font-family: 'Press Start 2P', cursive; /* police spéciale 2010-like */
 }
 
@@ -19,6 +19,16 @@ h1 {
     color: #ff0080;
     text-shadow: 2px 2px 0 #000; /* effet un peu « montage mal fait » */
     cursor: pointer;
+}
+
+h1#dina:hover {
+    transform: scale(1.1);
+}
+
+.pop-dina {
+    position: absolute;
+    font-weight: bold;
+    user-select: none;
 }
 
 i {
